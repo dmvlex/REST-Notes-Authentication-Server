@@ -30,7 +30,7 @@ namespace Notes.AuthServer
             app.UseRouting();
             app.UseIdentityServer();
             app.MapGet("/", () => "Notes AuthServer");
-
+            //
             using(var scope = app.Services.CreateScope())
             {
                 var context = scope.ServiceProvider.GetService<AuthDbContext>();
