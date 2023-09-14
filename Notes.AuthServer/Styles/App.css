@@ -1,0 +1,31 @@
+﻿body {
+    margin:0;
+    background-color:hotpink;
+}
+
+.input{
+    font-size: 16px;
+    font-family: Consolas;
+    background-color: #fff;
+    width: 100%;
+}
+
+.header{
+    font-family:Arial;
+    color:#332600;
+    font-size: 30px;
+    text-align: center;
+}
+
+.button{
+    font-size:16px;
+    background-color:blueviolet;
+    color:white;
+    border-radius: 4px;
+    font-family:Arial;
+    width:100%;
+}
+
+.block{
+    margin-top: 10px;
+}

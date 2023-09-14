@@ -9,7 +9,7 @@ namespace Notes.AuthServer.Data
     {
         DbSet<AppUser> AppUsers { get; set; }
 
-        public AuthDbContext(DbContextOptions<IdentityDbContext<AppUser>> options)
+        public AuthDbContext(DbContextOptions options)
             : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)

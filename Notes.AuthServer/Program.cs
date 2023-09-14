@@ -1,6 +1,7 @@
 using IdentityServer4.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Notes.AuthServer.Data;
 using Notes.AuthServer.Model;
 
@@ -43,12 +44,20 @@ namespace Notes.AuthServer
                 config.LogoutPath = "/Auth/Logout";
             });
 
+            builder.Services.AddControllersWithViews();
+
             var app = builder.Build();
 
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(builder.Environment.ContentRootPath,"Styles")),
+                RequestPath = "/styles"
+            });
 
             app.UseRouting();
             app.UseIdentityServer();
-            app.MapGet("/", () => "Notes AuthServer");
+            app.MapDefaultControllerRoute();
             using(var scope = app.Services.CreateScope())
             {
                 try
