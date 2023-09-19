@@ -55,15 +55,15 @@ namespace Notes.AuthServer
                     },
                     RedirectUris =
                     {
-                        "http://.../signin-oidc" //Сюда будет перенаправлять после аутентификации клиентского приложения
+                        "http://localhost:3000/signin-oidc" //Сюда будет перенаправлять после аутентификации клиентского приложения
                     },
                     AllowedCorsOrigins =  //разрешаем корсы для определенных URI
                     {
-                        "http://..."
+                        "http://localhost:3000/"
                     },
                     PostLogoutRedirectUris = //Редирект после логаута
                     {
-                        "http://.../signout-oidc"
+                        "http://localhost:3000/signout-oidc"
                     }
                 }
             };
